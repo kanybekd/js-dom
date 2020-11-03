@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background-color:#88d5e9;
+        color:#333;
+        text-transform:capitalize;
+      }
+      .container{
+        text-align:center;
+        padding:2rem;
+        border-radius:10px;
+        background:#f9f9f9;
+        flex:0 80%;
+      }
+      button{
+        display:block;
+        margin:1rem auto;
+        padding:10px;
+        border-radius:10px;
+        border:none;
+        background:#6cc3dB;
+        color:#fff;
+        font-size:2rem;
+        outline:none;
+        cursor:pointer;
+
+      }
+
+      input{
+        padding:0.5rem;
+        border-radius:10px;
+        font-size:1rem;
+        border:3px solid #88d5e9;
+        outline:none;
+        box-shadow: 3px 4px 10px #888888;
+
+
+      }
+      #msgout{
+        margin:0.5rem;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>type your message</h1>
+      <input type="text" name="" value="" id='msgin'>
+      <button type="button" name="button">press to send</button>
+      <h3>last msg</h3>
+      <h1 id='msgout'></h1>
+
+    </div>
+    <script type="text/javascript">
+      var btn=document.getElementsByTagName('button')
+      var inp=document.querySelector('#msgin')
+      var out=document.querySelector('#msgout')
+      console.log(btn)
+      btn[0].addEventListener('click',function(){
+        if(inp.value===''){
+          alert('enter valid text')
+        }
+
+        out.innerText=inp.value;
+      })
+    </script>
+
+
+  </body>
+</html>

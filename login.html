@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="login.css">
+  </head>
+  <body>
+    <div class="login-box">
+      <h1>Login</h1>
+      <div class="textbox">
+        <i class="fa fa-user"></i>
+        <input class='inp' type="text" placeholder='username'>
+      </div>
+      <div class="textbox">
+        <i class="fa fa-key"></i>
+        <input type="password" placeholder="password">
+      </div>
+      <button class='btn' type="button" name="button"><a href="#">Sign-in</a></button>
+      <!-- <input type="button"  class='btn' name="" value="Sign in"> -->
+
+    </div>
+    <script type="text/javascript">
+      var btn=document.querySelector('.btn');
+      var inp=document.querySelector('.inp');
+      btn.addEventListener('click',function(){
+        if(inp.value==''){
+          alert('enter valid username')
+        }else{
+
+        var win = window.open('file:///C:/Users/kduisheev/Documents/seytech/javascript/navigation.html', '_blank');
+        win.focus();
+      }
+      })
+
+    </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      *{
+
+        box-sizing:border-box;
+      }
+      body{
+        height:80%;
+        width:40%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .calculator{
+        flex: 0 0 80%;
+
+      }
+      .screen{
+        width:100%;
+        font-size:90px;
+        padding:10px;
+        background:black;
+        color:white;
+        border:none;
+
+      }
+      .buttons{
+        display:flex;
+        flex-wrap:wrap;
+
+
+
+      }
+      button{
+        flex:0 0 25%;
+        border:1px solid black;
+        padding:10px;
+
+      }
+
+      .btn-pink{
+        background:pink;
+        color:black;
+      }
+      .btn-grey{
+        background:rgb(224,224,224);
+      }
+      .btn,.btn-equal,.btn-clear{
+
+        font-size:30px;;
+      }
+      .btn-equal{
+        background:green;
+      }
+      .btn-clear{
+        background:red;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <section class='calculator'>
+
+    <form>
+      <input type="text" name="" value="" class='screen' placeholder="0">
+    </form>
+    <div class="buttons">
+      <button type="button" class='btn btn-pink' data-num='*' name="button">*</button>
+      <button type="button" class='btn btn-pink' data-num='/' name="button">/</button>
+      <button type="button" class='btn btn-pink' data-num='+' name="button">+</button>
+      <button type="button" class='btn btn-pink' data-num='-' name="button">-</button>
+
+      <button type="button" class='btn btn-grey' data-num='.' name="button">.</button>
+      <button type="button" class='btn btn-grey' data-num='9' name="button">9</button>
+      <button type="button" class='btn btn-grey' data-num='8' name="button">8</button>
+      <button type="button" class='btn btn-grey' data-num='7' name="button">7</button>
+      <button type="button" class='btn btn-grey' data-num='6' name="button">6</button>
+      <button type="button" class='btn btn-grey' data-num='5' name="button">5</button>
+      <button type="button" class='btn btn-grey' data-num='4' name="button">4</button>
+      <button type="button" class='btn btn-grey' data-num='3' name="button">3</button>
+      <button type="button" class='btn btn-grey' data-num='2' name="button">2</button>
+      <button type="button" class='btn btn-grey' data-num='1' name="button">1</button>
+      <button type="button" class='btn btn-grey' data-num='0' name="button">0</button>
+
+      <button type="button" class='btn-equal btn-grey' data-num='' name="button">=</button>
+      <button type="button" class='btn-clear btn-grey' data-num='' name="button">C</button>
+    </div>
+</section>
+<script type="text/javascript">
+
+    const btns=document.querySelectorAll('.btn');
+    const screens=document.querySelector('.screen');
+    const clear=document.querySelector('.btn-clear');
+    const equal=document.querySelector('.btn-equal');
+
+    for(let i=0;i<btns.length;i++){
+      btns[i].addEventListener('click',function(){
+
+        let number=btns[i].getAttribute('data-num');
+        console.log('number',number)
+        console.log(btns[i])
+        // put values of clicked buttons on screen
+        screens.value+=number;
+        console.log('scre',screens.value)
+      })
+    }
+    equal.addEventListener('click',function(){
+      console.log('type',typeof screens.value)
+      // apply math operations on string and convert ti number
+      let value=eval(screens.value);
+      console.log('value',typeof value)
+      console.log('value',value)
+      screens.value=value;
+      console.log('scr',screens)
+    })
+    clear.addEventListener('click',function(){
+      // clear out once C button is clicked
+      screens.value='';
+    })
+</script>
+  </body>
+</html>

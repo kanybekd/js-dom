@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+      button{
+        background-color:grey;
+        color:black;
+        padding:10px;
+        outline:none;
+        <!-- border:5px solid white; -->
+        display:inline-flex;
+        width:100px;
+        border-radius:5px;
+        <!-- box-shadow: 5px 10px 8px #888888; -->
+
+      }
+      button:hover{
+        background-color:black;
+        color:white;
+        cursor:pointer;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <button class='color' type="button" name="button">Press here</button>
+
+    <script type="text/javascript">
+
+      var btn=document.querySelector('.color');
+      var body=document.querySelector('body');
+      var colors=['grey','blue','red','yellow','black','tomato','crimson'];
+
+      btn.addEventListener('click',change)
+      function change(){
+        let rand=Math.floor(Math.random()*colors.length);
+        body.style.backgroundColor=colors[rand];
+      }
+
+      btn.addEventListener('mouseover',function(){
+        btn.style='box-shadow:5px 10px 8px #888888';
+        btn.style.borderColor='red';
+        // this.width='400px';
+      })
+
+      btn.addEventListener('mouseout',change3)
+      function change3(){
+        btn.style='';
+        // this.width='80px';
+      }
+
+    </script>
+  </body>
+</html>

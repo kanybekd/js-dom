@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        /* border:1px solid red; */
+
+        /* width: 400px; */
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      #one{
+        margin:10px;
+        padding: 20px;;
+        width: 400px;
+        border:1px solid blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        background: chocolate;
+        color:white;
+      }
+      button{
+        border:none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      </style>
+  </head>
+  <body>
+    <div id="one">
+      <h2 id='head'>0</h2>
+      <h2 id='clock'></h2>
+      <div>
+        <button onclick="reset()" type="button" name="button">reset</button>
+        <button onclick="pause()" type="button" name="button">pause</button>
+        <button onclick='cont()' type="button" name="button">continue</button>
+      </div>
+    </div>
+ 
+
+    <script type="text/javascript">
+
+      const counter=document.getElementById('head');
+      var timer=0
+      var int=setInterval(start,1000)
+
+      function reset(){
+        timer=0
+        counter.innerText=timer;
+      }
+      function start(){
+        timer++
+        counter.innerText=timer
+      }
+      function pause(){
+        clearInterval(int)
+      }
+      function cont(){
+        int=setInterval(start,1000)
+      }
+      setInterval(function(){
+      var cl=document.querySelector('#clock')
+      var ti=new Date()
+      let day='AM'
+      let hr=ti.getHours()
+      let mnt=ti.getMinutes()
+      let sec=ti.getSeconds()
+      if (hr>12 ){
+        day='PM'
+        hr=hr-12
+      }
+      if(sec<10){
+        sec='0'+sec
+      }
+      if(mnt<10){
+        mnt='0'+mnt
+      }
+      if(hr<10){
+        hr='0'+hr
+      }
+
+      cl.innerText=hr + ':'+ mnt + ':'+ sec +' '+ day
+
+
+})
+
+    </script>
+  </body>
+</html>

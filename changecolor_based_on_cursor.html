@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      li{
+        text-decoration: none;
+        display: block;
+        border-radius: 10px;
+        border-top-color: 2px solid black;
+        font-size: 20px;
+        list-style-type: none;
+      }
+      #boxes{
+        width: 400px;
+        height: 200px;
+        border-style: solid ;
+        /* background-color: grey; */
+        border-color: 2px solid black;
+        margin-left: 200px;
+        /* padding-left: 200px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="" id='boxes'>
+    </div>
+
+    <script type="text/javascript">
+    var a=document.querySelectorAll('li')
+    // a.style.background='grey';
+    console.log(a[0])
+    a=document.querySelector('items')
+    // a[0].style.backgroundColor='yellow';
+    // a.style.backgroundColor='blue';
+    // console.log(a)
+    // var newDiv=document.createElement('div');
+    // newDiv.className='DOM';
+    // newDiv.id='news';
+    // var b=document.createTextNode('Hello world');
+    // newDiv.appendChild(b);
+    // console.log(newDiv)
+
+    // var container=document.querySelector('.cont');
+    // var hh=document.querySelector('.box')
+    // console.log(container)
+    // document.body.appendChild(newDiv)
+    // container.before(newDiv);
+
+    // var c=document.createElement('li')
+    // c.innerText='asd'
+    // a.appendChild(c)
+    // var btn=document.getElementById('btn').addEventListener('click', call)
+    // function call (aq){
+    //   var w=document.createElement('li');
+    //   var t=document.querySelector('#inp');
+    //
+    //   w.innerText=t.value;
+    //   a.insertBefore(w,a.childNodes[0]);
+    //   var hed=document.querySelector('h1')
+    //   hed.innerText=t.value;
+    //   hed.style.backgroundColor='yellow';
+    //   console.log(aq);
+    //   console.log(aq.target.id);
+    //
+    // };
+    var box=document.getElementById('boxes');
+    box.addEventListener('mousemove',roll);
+    var body=document.querySelector('body');
+    function roll(e){
+      console.log(e.target)
+
+      document.body.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",100)";
+      a[0].style.background=yellow;
+      a[1].innerText=e.offsetY;
+      console.log(e.offsetX,'+',e.offsetY)
+
+
+    }
+
+    var inn=document.querySelector('#inp');
+    inn.addEventListener('keydown',call);
+
+    function call(r){
+      document.querySelector('p').innerText=r.target.value;
+    }
+
+
+    </script>
+
+
+  </body>
+</html>

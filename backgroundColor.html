@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+      }
+      .container{
+        display:100%;
+        text-align:center;
+        width:400px;
+        height:400px;
+        border:1px solid black;
+      }
+      .hexcolor{
+        text-transform:capitalize;
+      }
+      .hex{
+        font-size:3rem;
+      }
+      .btn{
+        color:red;
+        border:1px solid grey;
+        border-radius:5px;
+        font-size:2rem;
+        padding:10px;
+        cursor:pointer;
+        outline:none;
+        text-transform:capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class='hexcolor'>color code is:<span class='hex'></span></h3>
+      <button class='btn' type="button" name="button">press for changing</button>
+    </div>
+    <script type="text/javascript">
+      var arr=['A','B','C','D','E','F',1,2,3,4,5,6,7,8,9,0]
+      var btn=document.querySelector('.btn')
+      var text=document.querySelector('.hex')
+      var cont=document.querySelector('.container')
+      btn.addEventListener('click',function(){
+        var s='#'
+        for(var i=0;i<6;i++){
+          s+=arr[Math.floor(Math.random()*arr.length)]
+
+        }
+        console.log(s)
+        text.innerText=s
+        cont.style.background=s;
+      })
+
+
+    </script>
+
+  </body>
+</html>
